@@ -1,3 +1,6 @@
 [submodule "rtthread-nano"]
   path = rtthread-nano
   url = https://github.com/RT-Thread/rtthread-nano.git
+[submodule "RTT"]
+	path = RTT
+	url = https://github.com/SEGGERMicro/RTT.git

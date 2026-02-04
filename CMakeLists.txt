@@ -29,6 +29,18 @@ target_include_directories(rtthread PUBLIC "rtthread-nano/rt-thread/include" "sr
 target_compile_options(rtthread PRIVATE -Wno-unused-variable)
 target_link_libraries(${CMAKE_PROJECT_NAME} rtthread)
 
+# segger
+add_library(RTT STATIC)
+file(GLOB_RECURSE RTT_SOURCES CMAKE_CONFIGURE_DEPENDS 
+  "RTT/RTT/*.c"
+  "RTT/RTT/*.S"
+  "RTT/Syscalls/SEGGER_RTT_Syscalls_GCC.c")
+target_sources(RTT PRIVATE ${RTT_SOURCES})
+target_include_directories(RTT PUBLIC
+  "RTT/Config"
+  "RTT/RTT")
+target_link_libraries(${CMAKE_PROJECT_NAME} RTT)
+
 # user
 file(GLOB_RECURSE SRCFILES "src/*.cpp" "src/*.c")
 target_sources(${CMAKE_PROJECT_NAME} PRIVATE ${SRCFILES})
