@@ -1,0 +1,11 @@
+{
+  "recommendations": [
+    "xaver.clang-format",
+    "marus25.cortex-Debug",
+    "shd101wyy.markdown-preview-enhanced",
+    "mcu-debug.rtos-views",
+  ],
+  "unwantedRecommendations": [
+    "ms-vscode.cpptools"
+  ]
+}

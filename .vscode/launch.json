@@ -1,0 +1,31 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "jlink-Debug",
+      "executable": "./build/hello_rtthread.elf",
+      "type": "cortex-debug",
+      "request": "launch",
+      "showDevDebugOutput": "none",
+      "servertype": "jlink",
+      "device": "stm32f401re",
+      "liveWatch": {
+        "enabled": true,
+        "samplesPerSecond": 1
+      },
+      "preLaunchTask": "build",
+      "rttConfig": {
+        "enabled": true,
+        "address": "auto",
+        "polling_interval": 10,
+        "decoders": [
+          {
+            "type": "console",
+            "label": "cnt",
+            "noclear": false,
+            "port": 0
+          }
+        ]
+      }
+    }
+}
